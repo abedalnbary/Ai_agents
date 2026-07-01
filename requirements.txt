@@ -1,0 +1,7 @@
+langchain-core==0.3.84
+langchain-google-genai==2.0.7
+google-generativeai==0.8.3
+python-dotenv==1.0.1
+langchain-text-splitters==0.3.8
+langchain-pinecone==0.0.1
+pinecone-client>=3.0.0
