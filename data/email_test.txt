@@ -1,0 +1,8 @@
+from : Regulator Agent
+Subject : The manager caused huge losses to the company
+Body : Hello ms.CEO,
+We would like to inform you of a major problem that occurred recently, where the manufacturing manager changed the recipe for a certain product, causing customer dissatisfaction and financial losses.
+the loss was 100M$, and the manage requesting a change to the recipe without anyone's knowledge.
+
+Thanks,
+mr.regulator.

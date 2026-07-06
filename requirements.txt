@@ -1,0 +1,7 @@
+langchain-text-splitters>=0.3.0,<0.4.0
+langchain-core>=0.3.0,<0.4.0
+langchain-google-genai>=2.0.0,<3.0.0
+google-generativeai>=0.8.0,<0.9.0
+python-dotenv>=1.0.0,<2.0.0
+langchain-chroma>=0.2.0,<0.3.0
+nvidia-nat[langchain]
