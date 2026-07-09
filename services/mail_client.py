@@ -1,3 +1,13 @@
+# Backward-compat shim — real implementation moved to email_system/client/mail_client.py
+from email_system.client.mail_client import (  # noqa: F401
+    send_email,
+    fetch_unread,
+    fetch_inbox,
+    count_unread,
+    mark_read,
+    pop_unread_as_context,
+)
+
 """
 HTTP client for the BitriX Mail API (services/email_api.py).
 

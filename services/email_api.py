@@ -1,3 +1,6 @@
+# Backward-compat shim — real implementation moved to email_system/api/email_api.py
+from email_system.api.email_api import app  # noqa: F401
+
 """
 BitriX Mail API — the real transport for inter-agent email.
 

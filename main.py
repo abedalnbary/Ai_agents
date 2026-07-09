@@ -11,9 +11,9 @@ from services.llm_client import LlmClient, LlmConfig
 from services.tool_executor import ToolExecutor
 from services.document_store import DocumentStore, ChromaConfig, ChunkConfig
 from services.embedding_service import EmbeddingService, EmbeddingConfig
-from services.inbox_injector import pop_unread_as_context
-from tools.send_email import SendEmail
-from tools.check_inbox import CheckInbox
+from email_system.client.mail_client import pop_unread_as_context
+from email_system.tools.send_email import SendEmail
+from email_system.tools.check_inbox import CheckInbox
 
 load_dotenv()
 
@@ -73,7 +73,7 @@ nat_exe = str(Path(sys.executable).parent / ("nat.exe" if os.name == "nt" else "
 import sys
 sys.path.insert(0, ".")          # so "from services..." works
 
-from services import email_store
+from email_system.store import email_store
 
 email_store.send(
     from_addr="coo@happytuna.bitrix",
