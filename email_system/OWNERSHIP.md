@@ -1,0 +1,5 @@
+- Owner: Team 1
+- Status: shared infrastructure — all teams consume via HTTP only
+- Rule: no file outside this folder may import from email_system.store
+- Future: extractable via `git subtree split --prefix=email_system` — keep zero outward imports
+- Outward-import audit: run `grep -rn --include="*.py" "^from base\.\|^from services\.\|^from agents\." email_system/` → must return zero hits

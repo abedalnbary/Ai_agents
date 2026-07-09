@@ -1,0 +1,14 @@
+services:
+  email-service:
+    build:
+      context: ./email_system
+      dockerfile: Dockerfile
+    image: email-service
+    container_name: email-service
+    ports:
+      - "8000:8000"
+    environment:
+      - EMAIL_API_URL=http://localhost:8000
+    volumes:
+      - ./email_system/data:/app/email_system/data
+    restart: unless-stopped

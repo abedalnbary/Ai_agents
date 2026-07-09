@@ -1,3 +1,13 @@
+# Backward-compat shim — real implementation moved to email_system/store/email_store.py
+from email_system.store.email_store import (  # noqa: F401
+    send,
+    count_unread,
+    get_inbox,
+    get_unread,
+    mark_read,
+    mark_all_read,
+)
+
 import sqlite3
 import uuid
 from datetime import datetime

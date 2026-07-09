@@ -1,0 +1,32 @@
+# Vendored copy of the project's base/tool_base.py
+# Keep in sync manually. Source of truth: /base/tool_base.py
+
+from abc import ABC, abstractmethod
+from dataclasses import dataclass
+from typing import Any
+
+@dataclass
+class ToolSchema:
+    name: str                   # machine-readable identifier the LLM writes in its JSON output -> no spaces, Lowercase
+    description: str            # plain English -> this is what the llm reads to decide WHEN to call the tool
+    parameters: dict[str, Any]  # JSON Schema object -> it defines every argument with its type and a short description
+
+@dataclass
+class ToolResult:
+    value: Any = None
+    error: str | None = None
+    is_idempotent: bool = True
+
+    @property
+    def ok(self) -> bool:
+        return self.error is None
+
+class ToolBase(ABC):
+    @property
+    @abstractmethod
+    def schema(self) -> ToolSchema:
+        pass
+
+    @abstractmethod
+    def run(self, **kwargs) -> ToolResult:
+        pass
